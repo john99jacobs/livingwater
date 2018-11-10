@@ -84,8 +84,7 @@ pipeline {
       parallel {
         stage('US') {
           steps {
-            echo 'stage'
-            echo 'us'
+            echo 'deploy int'
           }
         }
         stage('UK') {
@@ -93,26 +92,112 @@ pipeline {
             echo 'uk'
           }
         }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Create Test Data') {
-      steps {
-        echo 'test'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'deploy int'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Functional Test') {
-      steps {
-        echo 'func'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'deploy int'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Load Test') {
-      steps {
-        echo 'load'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'deploy int'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Tear Down Env') {
-      steps {
-        echo 'tear'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'deploy int'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Deploy Prod') {
