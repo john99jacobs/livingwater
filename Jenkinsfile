@@ -81,8 +81,18 @@ pipeline {
       }
     }
     stage('Create Stage Env') {
-      steps {
-        echo 'stage'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'stage'
+            echo 'us'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
       }
     }
     stage('Create Test Data') {
