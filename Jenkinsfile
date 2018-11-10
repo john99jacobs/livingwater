@@ -1,32 +1,14 @@
 pipeline {
   agent none
   stages {
-    stage('Git Clone & Setup') {
-      parallel {
-        stage('1') {
-          steps {
-            echo 'clone'
-          }
-        }
-        stage('') {
-          steps {
-            echo '1'
-          }
-        }
+    stage('1') {
+      steps {
+        echo 'clone'
       }
     }
     stage('Build') {
-      parallel {
-        stage('2') {
-          steps {
-            echo 'build'
-          }
-        }
-        stage('') {
-          steps {
-            echo '2'
-          }
-        }
+      steps {
+        echo 'build'
       }
     }
     stage('Unit Test') {
