@@ -1,7 +1,7 @@
 pipeline {
   agent none
   stages {
-    stage('1') {
+    stage('Git Clone & Setup') {
       steps {
         echo 'clone'
       }
@@ -32,13 +32,52 @@ pipeline {
       }
     }
     stage('Deploy to Int') {
-      steps {
-        echo 'deploy int'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'deploy int'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'france'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'germany'
+          }
+        }
       }
     }
     stage('Run Int Test') {
-      steps {
-        echo 'run int'
+      parallel {
+        stage('US') {
+          steps {
+            echo 'run int'
+            echo 'us'
+          }
+        }
+        stage('UK') {
+          steps {
+            echo 'uk'
+          }
+        }
+        stage('Canada') {
+          steps {
+            echo 'canada'
+          }
+        }
+        stage('France') {
+          steps {
+            echo 'france'
+          }
+        }
       }
     }
   }
