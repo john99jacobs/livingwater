@@ -80,5 +80,35 @@ pipeline {
         }
       }
     }
+    stage('Create Stage Env') {
+      steps {
+        echo 'stage'
+      }
+    }
+    stage('Create Test Data') {
+      steps {
+        echo 'test'
+      }
+    }
+    stage('Functional Test') {
+      steps {
+        echo 'func'
+      }
+    }
+    stage('Load Test') {
+      steps {
+        echo 'load'
+      }
+    }
+    stage('Tear Down Env') {
+      steps {
+        echo 'tear'
+      }
+    }
+    stage('Deploy Prod') {
+      steps {
+        echo 'deploy'
+      }
+    }
   }
 }
