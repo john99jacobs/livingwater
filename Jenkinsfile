@@ -33,22 +33,27 @@ pipeline {
     }
     stage('Deploy to Int') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
@@ -57,47 +62,56 @@ pipeline {
     }
     stage('Run Int Test') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
-            echo 'run int'
-            echo 'us'
+            echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
-          steps {
-            echo 'canada'
-          }
-        }
-        stage('France') {
+        stage('3-Canada') {
           steps {
             echo 'france'
+          }
+        }
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
+          steps {
+            echo 'germany'
           }
         }
       }
     }
     stage('Create Stage Env') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
@@ -106,22 +120,27 @@ pipeline {
     }
     stage('Create Test Data') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
@@ -130,22 +149,27 @@ pipeline {
     }
     stage('Functional Test') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
@@ -154,22 +178,27 @@ pipeline {
     }
     stage('Load Test') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
@@ -178,22 +207,27 @@ pipeline {
     }
     stage('Tear Down Env') {
       parallel {
-        stage('US') {
+        stage('1-US') {
           steps {
             echo 'deploy int'
           }
         }
-        stage('UK') {
+        stage('2-UK') {
           steps {
             echo 'uk'
           }
         }
-        stage('Canada') {
+        stage('3-Canada') {
           steps {
             echo 'france'
           }
         }
-        stage('France') {
+        stage('4-France') {
+          steps {
+            echo 'germany'
+          }
+        }
+        stage('5-[...]') {
           steps {
             echo 'germany'
           }
