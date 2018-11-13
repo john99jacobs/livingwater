@@ -21,6 +21,11 @@ pipeline {
         echo 'code quality'
       }
     }
+    stage('Generate Docs') {
+      steps {
+        echo 'docs'
+      }
+    }
     stage('Create Container') {
       steps {
         echo 'create container'
@@ -89,7 +94,7 @@ pipeline {
         }
       }
     }
-    stage('Create Stage Env') {
+    stage('Create Load Env') {
       parallel {
         stage('1-US') {
           steps {
@@ -232,6 +237,11 @@ pipeline {
             echo 'germany'
           }
         }
+      }
+    }
+    stage('Deploy Stage') {
+      steps {
+        echo 'deploy'
       }
     }
     stage('Deploy Prod') {
